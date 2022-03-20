@@ -1,16 +1,14 @@
 import logging
-import os
-
 from aiogram import Bot, Dispatcher, executor, types
 
 import markups as nav
 import text
 import text as txt
+import config as cfg
 
 logging.basicConfig(level=logging.INFO)
 
-token = os.environ['TOKEN']
-bot = Bot(token)
+bot = Bot(cfg.TOKEN)
 dp = Dispatcher(bot)
 
 # --- Основное меню ---
@@ -30,7 +28,7 @@ async def bot_message(message: types.Message):
         await message.answer("https://telegra.ph/eda-03-17")
         # await message.answer()
         # await message.reply('Неизвестная команда')
-#        await message.delete()
+        # await message.delete()
 
 
 
