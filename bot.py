@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO)
 bot = Bot(cfg.TOKEN)
 dp = Dispatcher(bot)
 
-# --- Основное меню ---
+# --- Основное меню ----
 @dp.message_handler(commands=["start"], chat_type="private")
 async def start_menu(message: types.Message):
     await message.answer(txt.WELCOME, reply_markup=nav.startMenu)
