@@ -9,7 +9,7 @@ import config as cfg
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(cfg.TOKEN)
+bot = Bot(token=cfg.TOKEN)
 dp = Dispatcher(bot)
 
 # --- Основное меню ----
@@ -34,9 +34,15 @@ async def bot_message(message: types.Message):
 @dp.message_handler()
 async def bot_message(message: types.Message):
     if message.text == "/start@vuinfobot_bot":
-        await message.delete()
+        try:
+            await message.delete()
+        except:
+            print("*** Can delete message ***")
     if message.text == "/menu" and message.from_user.id == 148666935:
-        await message.delete()
+        try:
+            await message.delete()
+        except:
+            print("*** Can delete message ***")
         await message.answer("Выберите нужный раздел ", reply_markup=nav.mainMenu)
     if message.text.lower() in text.EDA:
         # await bot.send_message(message.from_user.id, "https://telegra.ph/eda-03-17")

@@ -1,3 +1,6 @@
-import os
+from os import getenv
+from sys import exit
 
-TOKEN = os.environ['TOKEN']
+TOKEN = getenv("TOKEN")
+if not TOKEN:
+    exit("Error: no token provided")
