@@ -1,5 +1,6 @@
 import logging
 from aiogram import Bot, Dispatcher, executor, types
+# from aiogram.dispatcher.filters import ChatTypeFilter
 
 import markups as nav
 import text
@@ -12,12 +13,12 @@ bot = Bot(cfg.TOKEN)
 dp = Dispatcher(bot)
 
 # --- Основное меню ---
-@dp.message_handler(commands=["start"], commands_prefix="/")
+@dp.message_handler(commands=["start"], chat_type="private")
 async def start_menu(message: types.Message):
     await message.answer(txt.WELCOME, reply_markup=nav.startMenu)
     await message.answer("Выберите нужный раздел ", reply_markup=nav.mainMenu)
 
-@dp.message_handler()
+@dp.message_handler(chat_type="private")
 async def bot_message(message: types.Message):
     if message.text == "Меню":
         # await message.delete()
@@ -30,7 +31,14 @@ async def bot_message(message: types.Message):
         # await message.reply('Неизвестная команда')
         # await message.delete()
 
-
+@dp.message_handler()
+async def bot_message(message: types.Message):
+    if message.text == "/start@vuinfobot_bot" and message.from_user.id != 148666935:
+        await message.delete()
+    if message.text.lower() in text.EDA:
+        # await bot.send_message(message.from_user.id, "https://telegra.ph/eda-03-17")
+        await message.answer(f"{message.from_user.username}, возможно это то, что вы искали.")
+        await message.answer("https://telegra.ph/eda-03-17")
 
 # --- Обработка пунктов меню ---
 @dp.callback_query_handler(text="emergency")
