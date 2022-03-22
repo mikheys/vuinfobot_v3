@@ -33,7 +33,7 @@ async def bot_message(message: types.Message):
 
 @dp.message_handler()
 async def bot_message(message: types.Message):
-    if message.text == "/start@vuinfobot_bot" and message.from_user.id != 148666935:
+    if message.text == "/start@vuinfobot_bot":
         await message.delete()
     if message.text == "/menu" and message.from_user.id == 148666935:
         await message.delete()
