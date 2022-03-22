@@ -35,6 +35,9 @@ async def bot_message(message: types.Message):
 async def bot_message(message: types.Message):
     if message.text == "/start@vuinfobot_bot" and message.from_user.id != 148666935:
         await message.delete()
+    if message.text == "/menu" and message.from_user.id == 148666935:
+        await message.delete()
+        await message.answer("Выберите нужный раздел ", reply_markup=nav.mainMenu)
     if message.text.lower() in text.EDA:
         # await bot.send_message(message.from_user.id, "https://telegra.ph/eda-03-17")
         await message.answer(f"{message.from_user.username}, возможно это то, что вы искали.")
