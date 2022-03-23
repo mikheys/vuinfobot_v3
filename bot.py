@@ -68,6 +68,9 @@ async def bot_message(message: types.Message):
             await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение, с интересующей вас информацией.")
             await bot.send_message(message.from_user.id, f'Здравствуте, {message.from_user.username}! В чате ВУ вы спрашивали "{message.text}". Посмотрите, возможно тут есть интересующая вас информация.')
             await bot.send_message(message.from_user.id, "https://telegra.ph/emergency-03-16")
+    for i in range(0, len(text.KOMEND)):
+        if text.KOMEND[i] in message.text.lower():
+            await message.answer(f"{message.from_user.username}, нашего коменданта зовут Павел.")
 
 # ------------------------------
 # --- Обработка пунктов меню ---
