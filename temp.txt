@@ -1,0 +1,12 @@
+# --- ответ прямо в чат ---
+# await message.answer(f"{message.from_user.username}, возможно это то, что вы искали.")
+# await message.answer("https://telegra.ph/eda-03-17")
+# --- ответ прямо в приват ---
+
+# if message.text.lower() in text.EDA:
+# await bot.send_message(message.from_user.id, "https://telegra.ph/eda-03-17")
+# await message.answer("https://telegra.ph/eda-03-17")
+# await message.answer()
+# await message.reply('Неизвестная команда')
+# await message.delete()
+# await bot.delete_message(message.chat.id, message.message_id)

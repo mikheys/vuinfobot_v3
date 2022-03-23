@@ -1,6 +1,5 @@
 import logging
 from aiogram import Bot, Dispatcher, executor, types
-# from aiogram.dispatcher.filters import ChatTypeFilter
 
 import markups as nav
 import text
@@ -24,16 +23,7 @@ async def start_menu(message: types.Message):
 @dp.message_handler(chat_type="private")
 async def bot_message(message: types.Message):
     if message.text == "Меню":
-        # await message.delete()
         await message.answer("Выберите нужный раздел ", reply_markup=nav.mainMenu)
- # #   else:
- #    if message.text.lower() in text.EDA:
- #        # await bot.send_message(message.from_user.id, "https://telegra.ph/eda-03-17")
- #        await message.answer("https://telegra.ph/eda-03-17")
-        # await message.answer()
-        # await message.reply('Неизвестная команда')
-        # await message.delete()
-        # await bot.delete_message(message.chat.id, message.message_id)
 
 @dp.message_handler()
 async def bot_message(message: types.Message):
@@ -55,10 +45,6 @@ async def bot_message(message: types.Message):
     # *** Блок проверки ключевых слов ***
     for i in range(0, len(text.EDA)):
         if text.EDA[i] in message.text.lower():
-            # --- ответ прямо в чат ---
-            # await message.answer(f"{message.from_user.username}, возможно это то, что вы искали.")
-            # await message.answer("https://telegra.ph/eda-03-17")
-            # --- ответ прямо в приват ---
             await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение с интересующей вас, информацией.")
             await bot.send_message(message.from_user.id, f'Здравствуте, {message.from_user.username}! В чате ВУ вы спрашивали "{message.text}". Посмотрите, возможно тут есть интересующая вас информация.')
             await bot.send_message(message.from_user.id, "https://telegra.ph/eda-03-17")
