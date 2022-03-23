@@ -45,29 +45,34 @@ async def bot_message(message: types.Message):
     # *** Блок проверки ключевых слов ***
     for i in range(0, len(text.EDA)):
         if text.EDA[i] in message.text.lower():
-            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение, с интересующей вас информацией.")
+            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение, с интересующей информацией.")
             await bot.send_message(message.from_user.id, f'Здравствуте, {message.from_user.username}! В чате ВУ вы спрашивали "{message.text}". Посмотрите, возможно тут есть интересующая вас информация.')
             await bot.send_message(message.from_user.id, "https://telegra.ph/eda-03-17")
     for i in range(0, len(text.TAXI)):
         if text.TAXI[i] in message.text.lower():
-            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение, с интересующей вас информацией.")
+            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение, с интересующей информацией.")
             await bot.send_message(message.from_user.id, f'Здравствуте, {message.from_user.username}! В чате ВУ вы спрашивали "{message.text}". Посмотрите, возможно тут есть интересующая вас информация.')
             await bot.send_message(message.from_user.id, "https://telegra.ph/taxi-03-16-2")
     for i in range(0, len(text.OTHERS)):
         if text.OTHERS[i] in message.text.lower():
-            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение, с интересующей вас информацией.")
+            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение, с интересующей информацией.")
             await bot.send_message(message.from_user.id, f'Здравствуте, {message.from_user.username}! В чате ВУ вы спрашивали "{message.text}". Посмотрите, возможно тут есть интересующая вас информация.')
             await bot.send_message(message.from_user.id, "https://telegra.ph/others-03-16")
     for i in range(0, len(text.VET)):
         if text.VET[i] in message.text.lower():
-            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение, с интересующей вас информацией.")
+            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение, с интересующей информацией.")
             await bot.send_message(message.from_user.id, f'Здравствуте, {message.from_user.username}! В чате ВУ вы спрашивали "{message.text}". Посмотрите, возможно тут есть интересующая вас информация.')
             await bot.send_message(message.from_user.id, "https://telegra.ph/veterinary-03-16")
     for i in range(0, len(text.EMERG)):
         if text.EMERG[i] in message.text.lower():
-            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение, с интересующей вас информацией.")
+            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение, с интересующей информацией.")
             await bot.send_message(message.from_user.id, f'Здравствуте, {message.from_user.username}! В чате ВУ вы спрашивали "{message.text}". Посмотрите, возможно тут есть интересующая вас информация.')
             await bot.send_message(message.from_user.id, "https://telegra.ph/emergency-03-16")
+    for i in range(0, len(text.TRANSPORT)):
+        if text.TRANSPORT[i] in message.text.lower():
+            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение, с интересующей информацией.")
+            await bot.send_message(message.from_user.id, f'Здравствуте, {message.from_user.username}! В чате ВУ вы спрашивали "{message.text}". Посмотрите, возможно тут есть интересующая вас информация.')
+            await bot.send_message(message.from_user.id, "https://telegra.ph/transport-03-16")
     for i in range(0, len(text.KOMEND)):
         if text.KOMEND[i] in message.text.lower():
             await message.answer(f"{message.from_user.username}, нашего коменданта зовут Павел.")
