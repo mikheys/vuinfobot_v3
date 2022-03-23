@@ -59,7 +59,7 @@ async def bot_message(message: types.Message):
             # await message.answer(f"{message.from_user.username}, возможно это то, что вы искали.")
             # await message.answer("https://telegra.ph/eda-03-17")
             # --- ответ прямо в приват ---
-            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение с, возможно интересуещей вас, информацией.")
+            await message.answer(f"{message.from_user.username}, я отправил вам личное сообщение с интересующей вас, информацией.")
             await bot.send_message(message.from_user.id, f'Здравствуте, {message.from_user.username}! В чате ВУ вы спрашивали "{message.text}". Посмотрите, возможно тут есть интересующая вас информация.')
             await bot.send_message(message.from_user.id, "https://telegra.ph/eda-03-17")
 
